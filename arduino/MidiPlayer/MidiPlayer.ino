@@ -2,23 +2,11 @@
 
 #include <avr/pgmspace.h>
 
-
-#define DUR_MULTIPLIER 1.0   //If tempo is incorrect, change this value. multiplier > 1 will be slower, multiplier < 1 will be faster.
+#include "melody.h"
 
 #define START_DELAY 3000    //Time (in ms) program will wait before starting the song.
 
 #define LOOP_DELAY 3000     //Time (in ms) program will wait before playing through song again. Increase for longer time, decrease for shorter. 0 will replay song immediately.
-
-#define M1BUZZER 3
-#define M2BUZZER 4
-#define M3BUZZER 5
-#define M4BUZZER 6
-#define M5BUZZER 7
-
-//#define TRACK2
-//#define TRACK3
-//#define TRACK4
-//#define TRACK5
 
 unsigned long duration = 0;
 unsigned long totalduration = 0;
@@ -53,68 +41,6 @@ unsigned long m5note = 0;
 int m5freq = 0;
 int m5counter = 0;
 Tone b5;
-
-
-//////////////////////////////////////Track 1//////////////////////////////////////////
-//durations
-const uint32_t m1durs[] PROGMEM = {
-
-};
-//frequencies
-const uint16_t melody1[] PROGMEM = {
-
-};
-
-
-//////////////////////////////////////Track 1//////////////////////////////////////////
-
-//////////////////////////////////////Track 2//////////////////////////////////////////
-#ifdef TRACK2
-const uint32_t m2durs[] PROGMEM = {
-
-};
-
-const uint16_t melody2[] PROGMEM = {
-
-};
-#endif
-//////////////////////////////////////Track 2//////////////////////////////////////////
-
-//////////////////////////////////////Track 3//////////////////////////////////////////
-#ifdef TRACK3
-const uint32_t m3durs[] PROGMEM = {
-
-};
-
-const uint16_t melody3[] PROGMEM = {
-
-};
-#endif
-//////////////////////////////////////Track 3//////////////////////////////////////////
-
-//////////////////////////////////////Track 4//////////////////////////////////////////
-#ifdef TRACK4
-const uint32_t m4durs[] PROGMEM = {
-
-};
-
-const uint16_t melody4[] PROGMEM = {
-
-};
-#endif
-//////////////////////////////////////Track 4//////////////////////////////////////////
-
-//////////////////////////////////////Track 5//////////////////////////////////////////
-#ifdef TRACK5
-const uint32_t m5durs[] PROGMEM = {
-
-};
-
-const uint16_t melody5[] PROGMEM = {
-
-};
-#endif
-//////////////////////////////////////Track 5//////////////////////////////////////////
 
 
 void setup(){
